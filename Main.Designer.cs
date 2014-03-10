@@ -48,6 +48,7 @@
             this.Output = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteAllRowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTop.SuspendLayout();
             this.pnlBo.SuspendLayout();
             this.pnlCenter.SuspendLayout();
@@ -180,7 +181,6 @@
             this.grdTranslate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdTranslate.Location = new System.Drawing.Point(0, 0);
             this.grdTranslate.Name = "grdTranslate";
-            this.grdTranslate.ReadOnly = true;
             this.grdTranslate.Size = new System.Drawing.Size(698, 243);
             this.grdTranslate.TabIndex = 0;
             this.grdTranslate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grdTranslate_MouseDown);
@@ -190,42 +190,46 @@
             this.Filename.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Filename.HeaderText = "Filename";
             this.Filename.Name = "Filename";
-            this.Filename.ReadOnly = true;
             // 
             // MD5Hash
             // 
             this.MD5Hash.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MD5Hash.HeaderText = "MD5 Hash";
             this.MD5Hash.Name = "MD5Hash";
-            this.MD5Hash.ReadOnly = true;
             // 
             // Input
             // 
             this.Input.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Input.HeaderText = "Input";
             this.Input.Name = "Input";
-            this.Input.ReadOnly = true;
             // 
             // Output
             // 
             this.Output.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Output.HeaderText = "Output";
             this.Output.Name = "Output";
-            this.Output.ReadOnly = true;
             // 
             // contextMenu
             // 
             this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteRowToolStripMenuItem});
+            this.deleteRowToolStripMenuItem,
+            this.deleteAllRowsToolStripMenuItem});
             this.contextMenu.Name = "contextMenuStrip1";
-            this.contextMenu.Size = new System.Drawing.Size(134, 26);
+            this.contextMenu.Size = new System.Drawing.Size(156, 48);
             // 
             // deleteRowToolStripMenuItem
             // 
             this.deleteRowToolStripMenuItem.Name = "deleteRowToolStripMenuItem";
-            this.deleteRowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteRowToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.deleteRowToolStripMenuItem.Text = "Delete Row";
             this.deleteRowToolStripMenuItem.Click += new System.EventHandler(this.deleteRowToolStripMenuItem_Click);
+            // 
+            // deleteAllRowsToolStripMenuItem
+            // 
+            this.deleteAllRowsToolStripMenuItem.Name = "deleteAllRowsToolStripMenuItem";
+            this.deleteAllRowsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.deleteAllRowsToolStripMenuItem.Text = "Delete All Rows";
+            this.deleteAllRowsToolStripMenuItem.Click += new System.EventHandler(this.deleteAllRowsToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -269,6 +273,7 @@
         private System.Windows.Forms.Button BtnGenerate;
         private System.Windows.Forms.ContextMenuStrip contextMenu;
         private System.Windows.Forms.ToolStripMenuItem deleteRowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteAllRowsToolStripMenuItem;
     }
 }
 

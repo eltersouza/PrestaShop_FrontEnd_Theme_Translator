@@ -53,7 +53,7 @@ namespace Translator
             if (e.Button == MouseButtons.Right)
             {
                 var hti = grdTranslate.HitTest(e.X, e.Y);
-                if (hti.Type != DataGridViewHitTestType.None)
+                if (hti.Type == DataGridViewHitTestType.Cell || hti.Type == DataGridViewHitTestType.RowHeader)
                 {
                     grdTranslate.ClearSelection();
                     grdTranslate.Rows[hti.RowIndex].Selected = true;
@@ -74,6 +74,11 @@ namespace Translator
             Result result = new Result();
             result.Show();
             result.GenerateCode(this.grdTranslate);
+        }
+
+        private void deleteAllRowsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            grdTranslate.Rows.Clear();
         }
     }
 }
